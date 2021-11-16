@@ -77,3 +77,16 @@ let arr=[2,17,13,6,22,31,45,66,100,-18];
 //}
 
 //2)
+//for (let i = arr.length - 1; i >= 0; i--) {
+//    console.log(arr[i]);
+//}
+
+//3)
+
+let i=arr.length-1;
+while(i>=0) {
+    if (i%2!==0){
+        console.log(arr[i]);
+    }
+    i--;
+}
