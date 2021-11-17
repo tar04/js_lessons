@@ -120,15 +120,15 @@ Example:
             // TO BE CONTINUED .....
         ]*/
 
-let usersWithCities = usersWithId;
-for (const user of usersWithCities) {
-    for (const cities of citiesWithId) {
-        if (cities.user_id === user.id) {
-            user.address = cities;
-        }
-    }
-}
-console.log(usersWithCities)
+//let usersWithCities = usersWithId;
+//for (const user of usersWithCities) {
+//    for (const cities of citiesWithId) {
+//        if (cities.user_id === user.id) {
+//            user.address = cities;
+//        }
+//    }
+//}
+//console.log(usersWithCities)
 
 //- Взяти масив з 10 чисел або створити його. Вивести в консоль тільки ті елементи, значення яких є парними.
 //let numbers = [-2, 2, 801, 4, 5500, 0, 7, 8, 83, 11];
