@@ -64,14 +64,23 @@ console.log(mass([1, 2, 65, -5]));*/
 console.log(mass([1, 2, 65, -5]));*/
 
 //- створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше (Math використовувати заборонено);
-function minmax(a, b, c, d) {
-
+/*function minmax(nums) {
+    let max = nums[0];
+    let min = nums[0];
+    for (const num of nums) {
+        if (num > max) {
+            max = num;
+        }
+        if (num < min) {
+            min = num;
+        }
+    }
+    console.log(max)
+    return min;
 }
 
-let a = 5;
-let b = -4;
-let c = 18;
-let d = 0;
+let nums = [5, -4, 18, 0]
+console.log(minmax(nums));*/
 
 //- створити функцію яка заповнює масив рандомними числами
 //(цей код генерує рандомні числа в діапазоні від 0 до 100 - Math.round(Math.random()*100)) та виводить його.
