@@ -93,10 +93,30 @@
 
 //- створити функцію яка заповнює масив рандомними числами
 //(цей код генерує рандомні числа в діапазоні від 0 до 100 - Math.round(Math.random()*100)) та виводить його.
-
+//let random=(arr)=>{
+//    for (let i = 0; i < 6; i++) {
+//        arr[i]=Math.round(Math.random()*100);
+//    }
+//    return arr;
+//}
+//console.log(random([]));
 
 //- створити функцію яка заповнює масив рандомними числами в діапазоні від 0 до limit. limit - аргумент, який характеризує кінцеве значення діапазону.
-
+//let random = (arr, limit) => {
+//    for (let i = 0; i < 10; i++) {
+//        arr[i] = Math.round(Math.random() * limit);
+//    }
+//    return arr;
+//}
+//console.log(random([],74));
 
 //- Функція приймає масив та робить з нього новий масив в зворотньому порядку. [1,2,3] -> [3, 2, 1].
-
+//let rev = (arr) => {
+//    let arr_reverse = [];
+//    for (let i = 0, j = arr.length - 1; i < arr.length; i++,j--) {
+//        arr_reverse[j] = arr[i];
+//    }
+//    return arr_reverse;
+//}
+//
+//console.log(rev([1, 2, 3]));
