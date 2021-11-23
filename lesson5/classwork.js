@@ -75,19 +75,22 @@
 //console.log(sum([1, 2, 3, 4]));
 
 //- створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше (Math використовувати заборонено);
-let minmax = (arr) => {
-    let min, max = arr[0];
-    for (const item of arr) {
-        if (item > max) {
-            max = item;
-        } else if (item > max) {
-            max = item;
-        }
-        return min;
-        console.log(max);
-    }
-}
-minmax([1, 2, 3, 4, 5])
+//let minmax = (arr) => {
+//    let max = arr[0];
+//    let min = arr[0];
+//    for (const item of arr) {
+//        if (item > max) {
+//            max = item;
+//        }
+//        if (item < min) {
+//            min = item;
+//        }
+//    }
+//    console.log(max);
+//    return min;
+//}
+//minmax([-6, 500, 0, 800, 2])
+
 //- створити функцію яка заповнює масив рандомними числами
 //(цей код генерує рандомні числа в діапазоні від 0 до 100 - Math.round(Math.random()*100)) та виводить його.
 
