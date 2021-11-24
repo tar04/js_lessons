@@ -54,14 +54,19 @@
 //[0,1,2,3,4] => [1,2,3,4,0]
 //[0,0,1,0]   => [1,0,0,0]
 
-let zeros = (arr) => {
-    let arr2 = [];
-    for (const item of arr) {
-        if (item !== 0) {
-            arr2.push(item);
-        }
-    }
-    return arr2;
-}
-
-console.log(zeros([1, 0, 6, 0, 3]));
+//let zeros = (arr) => {
+//    let arr2 = [];
+//    for (const item of arr) {
+//        if (item !== 0) {
+//            arr2.push(item);
+//        }
+//    }
+//    for (const item of arr) {
+//        if (item === 0) {
+//            arr2.push(item);
+//        }
+//    }
+//    return arr2;
+//}
+//
+//console.log(zeros([0,0,1,0]));
