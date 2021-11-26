@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //РЕГУЛЯРНИЙ ВИРАЗ: let s=str.replaceAll('( ) -  0',''); - вказується одразу усе, що хочемо змінювати
+
+    let str = 'oktetn';
+    //1) console.log(str)
+    // console.log(str.length)
+
+    //2)console.log(str[0])
+    //for (const strElement of str) {
+    //    console.log(strElement)
+    //}
+
+    //3)let s = str.concat(' hello'); - дописування після str тексту в дужках
+    //console.log(s)
+
+    //4)let toUpperCase = str.toUpperCase(); - переводить str у верхній регістр
+    //console.log(toUpperCase);
+
+    //5) let toLowerCase = str.toLowerCase(); - переводить str у нижній регістр регістр
+    //console.log(toLowerCase)
+
+    //6) let trim = str.trim(); - обрізає на початку і в кінці str зайві символи(пробіли, ескейпи, нюлайни(\n))
+    // console.log(trim)
+
+    //7) let endsWith = str.endsWith('en'); - чи закінчується str на те що в дужках, виводить boolean
+    //console.log(endsWith);
+
+    //8) let startsWith= str.startsWith('ok'); - чи починається str з того, що в дужках, виводить boolean
+    //console.log(startsWith);
+
+    //9)  let charAt = str.charAt(2); -повертає букву із str, що має індекс 2
+    //console.log(charAt)
+
+    //10) let includes = str.includes('kt'); -повертає булеве значення, чи є текст в дужках присутній у str;
+    //console.log(includes)
+
+    //11) let indexOf = str.indexOf('t'); - виводить індекс лише першого елемента в дужках із str, якщо такого нема, то виводить -1
+    //console.log(indexOf)
+
+    //12) let indexOf = str.indexOf('t',3); - виводить індекс лише першого елемента в дужках, починаючи з 3 елемента із str, якщо такого нема, то виводить -1
+    //console.log(indexOf)
+
+    //13) let indexOf = str.lastIndexOf('t'); - виводить індекс лише першого з кінця елемента в дужках із str, якщо такого нема, то виводить -1
+    //console.log(indexOf)
+
+    //14) let replaceAll = str.replaceAll('t','!'); - повертає нову string-у, у якій кожну 't' заміняє на '!', також є просто replace, яка міняє лиш перший елемент 't'
+    //console.log(replaceAll)
+    //Наприклад: форматування номеру-
+    //let pNum1='+38(098) 861-02-30';
+    //let clearnum=pNum1.replaceAll('+','').replaceAll('(','').replaceAll(')','').replaceAll(' ','').replaceAll('-',''); - chaining(коли усы методи в рядок)
+    //console.log(pNum1)
+    //console.log(clearnum)
+
+    //chaining приклад:
+    //str.toUpperCase().toLowerCase().replaceAll('t','xxx')
+    let strX = 'hello okten';
+    //15)let slice = strX.slice(2, 5); - вирізає з str символи, починаючи з 2 індексу по 5 не включно, якщо нічого не писати, то виведе повністю текст
+    //console.log(slice);
+
+    //16) let split = strX.split(' '); - ділить масив у місцях, де зустрічається елемент з дужок, в даному випадку пробіл, і записує його в масив через кому, при цьому елемент з дужок викидає,
+    //    якщо записати в дужки '', то масив буде поділено по 1 символу
+    //console.log(split);
+
+    //let substring = strX.substring(2,5); - те саме, що slice (тут перше значення завжди обов`язкове)
+    //console.log(substring)
+
+    //17) let splice= strX.split('').splice(2,3); - вирізає 3 елементи починаючи з 2 включно, використовується для масивів
+    //console.log(splice);
+
+
+
+
+</script>
+</body>
+</html>

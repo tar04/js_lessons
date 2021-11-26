@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let arr = [1, 2, 3, true, [11, 22, 33], 'asd', {name: 'kokos'}];
+    //1) console.log(typeof arr);
+    //console.log(Array.isArray(arr)) - еревірка, чи об'экт э масивом, повертає булеве значення
+
+    //2) let number=arr.push('new value'); - додає новий індекс і під ним записує новий елемент в кінець масиву, і повертає нове значення довжини масиву(number)
+    //console.log(arr, number)
+
+    //3) arr.pop(); - зворотній до push, забирає елемент і повертає попереднє значення довжини масиву
+    //console.log(arr);
+
+    //4) arr.unshift('asdwasfd'); -ідентичний до push, але додає на початок масиву
+
+    //5) arr.shift(); - ідентичний до pop, але забирає елемент спочатку масиву
+    // console.log(arr)
+
+    //6) let concat = arr.concat(['sadfasdf', 'qweweqr']);- повертає новий масив з дописаними у нього значеннями із дужок
+    //console.log(concat)
+    //console.log(arr)
+
+    //7) let join = arr.join('-'); - повертає новий масив, в якому об'єднює усі елементи в один і записує через тире
+    // console.log(join)
+
+    //8) let reverse = arr.reverse(); - повертає обернений масив
+    //console.log(reverse)
+
+    //9) let indexOf = arr.indexOf(true); - повертає індекс елемента з дужок
+    //console.log(indexOf);
+
+    //10) let slice = arr.slice(2,5); - вирізає елементи з масиву, починаючи з 2 по 5 не включно
+    //console.log(slice)
+
+    //11) let splice = arr.splice(2,3, 'xxx', 'yyy'); - вирізає з масиву 3 елементи, починаючи з другого і дописує наступні елементи з дужок
+    //console.log(splice);
+    //console.log(arr)
+
+    //12) arr.forEach(function (arrayItem,index, array){ - подібно цикло forof, але не повертає нічого
+    //    console.log(arrayItem, index)
+    //})
+
+    //13) console.log(arr.map((value, index) => {  - такий же як ForEach, ле здатний змінювати та повертати масиви, розмір масиву сталий
+    //        value.id = index + 1;
+    //        return value;
+    //    }
+    //));
+
+    //14) let filter = arr.filter(value => { - на відміну від map регулює(збільшує, або зменшує кількість елементів)
+    //    return value.status;
+    //});
+    //console.log(filter)
+
+    //15) let find = arr.find(value =>value.name === 'vasya'); - знаходить перше входження елементу з полем name,  якому є vasya
+    //console.log(find);
+
+    //16) arr.every(value => {
+    //    if (typeof value === "string") {
+    //        return true;
+    //    }
+    //})
+    //АБО
+    //let every = arr.every(value =>typeof value==="string"); -"ЧИ КОЖЕН ЕЛЕМЕНТ МАСИВУ МАЄ ТИП STRING"
+    //console.log(every)
+
+    //17)let some = arr.some(value => Array.isArray(value)); -"ЧИ Є ХОЧА Б ОДИН ЕЛЕМЕНТ МАСИВУ Є МАСИВОМ"
+    //console.log(some);
+
+    //18) let flat = arr.flat(1); - розкладає багатовимірний масив на 1 позицію вниз
+    //console.log(flat)
+
+    //19) let flatMap = arr.flatMap(value => { - синергія flat i map, тобто повністю розкладає масив у одновимірний та може ним маніпулювати
+    //    return value+'!!!'
+    //});
+    //console.log(flatMap)
+
+    //20) users.sort((u1,u2) => {- бере попарно обєкти і по заданих критеріях порівнює, повертає тільки числове значення
+    //    return u1.age-u2.age; //якщо значення відємне, то перший обєкт легший за другий і лишається на місці, якщо + то міняються місцями (тобто сортування по зростанню)
+    //})
+
+    //21) let fiskCheck = [1, 1, 1, 1, 1, 2, 5, 6, 2, 4, 8, 4, 5, 8];
+    //let reduce = fiskCheck.reduce((previousValue, currentValue) => {
+    //    return previousValue+currentValue;
+    //}, 0);
+    //console.log(reduce)
+</script>
+</body>
+</html>
