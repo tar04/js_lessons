@@ -140,5 +140,4 @@
 //function cutString(str, n) {
 //    return str.split(' ').reverse().slice(length-n).reverse().join(' ')
 //}
-//
 //document.writeln(cutString(str, 5));
