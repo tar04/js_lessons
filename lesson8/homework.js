@@ -1,7 +1,6 @@
 //Візьміть файл template1.html, підключіть до нього скрипт, і працюйте в ньому!
 
-//- Напишіть код,  який за допомоги document.getElementById або document.getElementsByClassName
-// або document.getElementsByTagName :
+//- Напишіть код,  який за допомоги document.getElementById або document.getElementsByClassName або document.getElementsByTagName :
 //-- отримує текст з параграфа з id "content"
 //console.log(document.getElementById('content').innerText);
 
