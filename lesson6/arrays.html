@@ -92,26 +92,6 @@
     //}, 0);
     //console.log(reduce)
 
-
-    //    function rec(num) {
-    //        let sum = 0;
-    //        sum += (num % 10);
-    //        num = Math.floor(num / 10);
-    //        if (num) {
-    //            rec(num)
-    //        }
-    //        return sum;
-    //    }
-    //
-    //    console.log(rec(879));
-
-
-    //function rec(num) {
-    //    return (num) ? num % 10 + rec(Math.floor(num / 10)) : 0;
-    //}
-
-    const rec = (num) => (num) ? num % 10 + rec(Math.trunc(num / 10)) : 0;
-    console.log(rec(1234));
 </script>
 </body>
 </html>
