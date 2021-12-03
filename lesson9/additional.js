@@ -235,55 +235,44 @@ let usersList = [
 
 //Створити під кожен елемент окремий блок. В цьому блоці, під кожну властивість, та властивості внутрішніх об'єктів створити свої окремі блок.
 for (const element of usersList) {
-    let div = document.createElement('div');
-    div.style.background = 'gray'
-    let id = document.createElement('h2');
-    id.innerText = element.id;
-
-    let name = document.createElement('h1');
-    name.innerText = element.name;
-
+    let divElement = document.createElement('div');
+    let id = document.createElement('div');
+    id.innerText = `Id : ${element.id}`;
+    let name = document.createElement('div');
+    name.innerText = `Name : ${element.name}`;
     let username = document.createElement('div');
-    username.innerText = element.username;
-
-    let email = document.createElement('h2');
-    email.innerText = element.email;
-
-    let address = document.createElement('div');
-    address.style.background = 'red'
-    let street = document.createElement('h2');
-    street.innerText = element.address.street
-    let suite = document.createElement('h2');
-    suite.innerText = element.address.suite
-    let city = document.createElement('h2');
-    city.innerText = element.address.city
-    let zipcode = document.createElement('h2');
-    zipcode.innerText = element.address.zipcode
-
-    let geo = document.createElement('div');
-    let lat = document.createElement('h2');
-    lat.innerText = element.address.geo.lat;
-    let lng = document.createElement('h2');
-    lng.innerText = element.address.geo.lng;
-
-    let phone = document.createElement('h2');
-    phone.innerText = element.phone;
-
-    let website = document.createElement('h2');
-    website.innerText = element.website;
-
-    let company = document.createElement('div');
-    company.style.background = 'gold'
-    let companyName = document.createElement('h2');
-    companyName.innerText = element.company.name;
-    let companyPhrase = document.createElement('h2');
-    companyPhrase.innerText = element.company.catchPhrase;
-    let companyBs = document.createElement('h2');
-    companyBs.innerText = element.company.bs;
-
-    document.body.appendChild(div)
-    div.append(id, name, username, email, address, phone, website, company)
-    company.append(companyName, companyPhrase, companyBs);
-    address.append(street, suite, city, zipcode, geo);
-    geo.append(lat, lng)
+    username.innerText = `Username : ${element.username}`;
+    let email = document.createElement('div');
+    email.innerText = `Email : ${element.email}`;
+    divElement.append(id, name, username, email);
+    for (const key in element.address) {
+        if (key !== 'geo') {
+            let div = document.createElement('div');
+            div.innerText = `${key} : ${element.address[key]}`;
+            divElement.appendChild(div);
+        } else {
+            let div1 = document.createElement('div');
+            divElement.appendChild(div1)
+            for (const key2 in element.address.geo) {
+                let div = document.createElement('div');
+                div.innerText = `${key2} : ${element.address.geo[key2]}`;
+                div1.appendChild(div);
+            }
+        }
+    }
+    let phone = document.createElement('div');
+    phone.innerText = `Phone : ${element.phone}`;
+    let website = document.createElement('div');
+    website.innerText = `Website : ${element.website}`;
+    divElement.append(phone, website);
+    divElement.append(document.createElement('h2').innerText='Company:');
+    for (const key in element.company) {
+        let div = document.createElement('div');
+        div.innerText = `${key} : ${element.company[key]}`;
+        divElement.appendChild(div);
+    }
+    document.body.appendChild(divElement);
+    divElement.append(document.createElement('hr'));
 }
+
+
