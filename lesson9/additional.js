@@ -284,6 +284,6 @@ for (const element of usersList) {
     document.body.appendChild(div)
     div.append(id, name, username, email, address, phone, website, company)
     company.append(companyName, companyPhrase, companyBs);
-    address.append(street, suite, city, zipcode, geo)
+    address.append(street, suite, city, zipcode, geo);
     geo.append(lat, lng)
 }
