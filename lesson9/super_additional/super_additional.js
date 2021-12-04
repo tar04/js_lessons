@@ -66,16 +66,73 @@ let users = [{
     }
 ];
 //- З масиву users за допомогою циклу витягнути адреси користувачів і записати (скопіювати) їх в інший порожній масив.
-let Arr = [];
-for (const user of users) {
-    Arr.push(user.address);
-}
-console.log(Arr);
-//- За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement. Всі данні в одному блоці.
+//let Arr = [];
+//for (const user of users) {
+//    Arr.push(user.address);
+//}
+//console.log(Arr);
 
-//- За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement, розділивши всі властивості по своїм блокам (div>div*4)
-//- За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement, розділивши всі властивості по своїм блокам , блок з адресою зробити окремим блоком, з блоками для кожної властивості
+//- За допомоги циклу проітерувати  масив users, записати кожного юзера в свій блок за допомоги document.createElement. Всі данні в одному блоці.
+//let div = document.createElement('div');
+//for (const user of users) {
+//    for (const key in user) {
+//        if (typeof user[key] !== "object") {
+//            div.innerText += ` ${key} : ${user[key]},`
+//        } else {
+//            for (const key1 in user[key]) {
+//                div.innerText += ` ${key1} : ${user[key][key1]}`
+//            }
+//            div.innerText += `.\n`
+//        }
+//    }
+//    document.body.appendChild(div)
+//}
 
+//- За допомоги циклу проітерувати  масив users, записати кожного юзера в свій блок за допомоги document.createElement, розділивши всі властивості по своїм блокам (div>div*4)
+//for (const user of users) {
+//    let div = document.createElement('div');
+//    for (const key in user) {
+//        if (typeof user[key] !== "object") {
+//            let div1 = div.cloneNode();
+//            div1.innerText += `${key} : ${user[key]},`
+//            div.appendChild(div1)
+//        } else {
+//            for (const key1 in user[key]) {
+//                let div1 = div.cloneNode();
+//                div1.innerText += ` ${key1} : ${user[key][key1]},`
+//                div.appendChild(div1)
+//            }
+//        }
+//    }
+//    div.style.display = 'flex'
+//    document.body.appendChild(div);
+//}
+
+//- За допомоги циклу проітерувати  масив users, записати кожного юзера в свій блок за допомоги document.createElement,
+// розділивши всі властивості по своїм блокам , блок з адресою зробити окремим блоком, з блоками для кожної властивості
+//for (const user of users) {
+//    let div = document.createElement('div');
+//    for (const key in user) {
+//        if (typeof user[key] !== "object") {
+//            let div1 = div.cloneNode();
+//            div1.innerText += `${key} : ${user[key]}, `
+//            div.appendChild(div1)
+//        } else {
+//            let div2 = div.cloneNode();
+//            div2.style.display = 'flex'
+//            div2.style.marginLeft = '6px'
+//            div2.innerHTML = ' Address: '
+//            for (const key1 in user[key]) {
+//                let div3 = div.cloneNode();
+//                div3.innerText += `${key1} : ${user[key][key1]}, `
+//                div2.appendChild(div3)
+//            }
+//            div.appendChild(div2)
+//        }
+//    }
+//    div.style.display = 'flex'
+//    document.body.appendChild(div);
+//}
 
 //-Є масив котрий характеризує правила. Створити скрипт який ітерує цей масив, та робить з кожне правило в окремому блоці.
 // При цому в блоці, номер правила записати в свій блок, текст правила записати в свій окремий блок.
