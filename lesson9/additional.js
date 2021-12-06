@@ -234,45 +234,48 @@ let usersList = [
 ];
 
 //Створити під кожен елемент окремий блок. В цьому блоці, під кожну властивість, та властивості внутрішніх об'єктів створити свої окремі блок.
-for (const element of usersList) {
-    let divElement = document.createElement('div');
-    let id = document.createElement('div');
-    id.innerText = `Id : ${element.id}`;
-    let name = document.createElement('div');
-    name.innerText = `Name : ${element.name}`;
-    let username = document.createElement('div');
-    username.innerText = `Username : ${element.username}`;
-    let email = document.createElement('div');
-    email.innerText = `Email : ${element.email}`;
-    divElement.append(id, name, username, email);
-    for (const key in element.address) {
-        if (key !== 'geo') {
-            let div = document.createElement('div');
-            div.innerText = `${key} : ${element.address[key]}`;
-            divElement.appendChild(div);
-        } else {
-            let div1 = document.createElement('div');
-            divElement.appendChild(div1)
-            for (const key2 in element.address.geo) {
-                let div = document.createElement('div');
-                div.innerText = `${key2} : ${element.address.geo[key2]}`;
-                div1.appendChild(div);
-            }
-        }
-    }
-    let phone = document.createElement('div');
-    phone.innerText = `Phone : ${element.phone}`;
-    let website = document.createElement('div');
-    website.innerText = `Website : ${element.website}`;
-    divElement.append(phone, website);
-    divElement.append(document.createElement('h2').innerText='Company:');
-    for (const key in element.company) {
-        let div = document.createElement('div');
-        div.innerText = `${key} : ${element.company[key]}`;
-        divElement.appendChild(div);
-    }
-    document.body.appendChild(divElement);
-    divElement.append(document.createElement('hr'));
-}
+//for (const element of usersList) {
+//    let divElement = document.createElement('div');
+//    let id = document.createElement('div');
+//    id.innerText = `Id : ${element.id}`;
+//    let name = document.createElement('div');
+//    name.innerText = `Name : ${element.name}`;
+//    let username = document.createElement('div');
+//    username.innerText = `Username : ${element.username}`;
+//    let email = document.createElement('div');
+//    email.innerText = `Email : ${element.email}`;
+//    divElement.append(id, name, username, email);
+//    for (const key in element.address) {
+//        if (key !== 'geo') {
+//            let div = document.createElement('div');
+//            div.innerText = `${key} : ${element.address[key]}`;
+//            divElement.appendChild(div);
+//        } else {
+//            let div1 = document.createElement('div');
+//            divElement.appendChild(div1)
+//            for (const key2 in element.address.geo) {
+//                let div = document.createElement('div');
+//                div.innerText = `${key2} : ${element.address.geo[key2]}`;
+//                div1.appendChild(div);
+//            }
+//        }
+//    }
+//    let phone = document.createElement('div');
+//    phone.innerText = `Phone : ${element.phone}`;
+//    let website = document.createElement('div');
+//    website.innerText = `Website : ${element.website}`;
+//    divElement.append(phone, website);
+//    divElement.append(document.createElement('h2').innerText='Company:');
+//    for (const key in element.company) {
+//        let div = document.createElement('div');
+//        div.innerText = `${key} : ${element.company[key]}`;
+//        divElement.appendChild(div);
+//    }
+//    document.body.appendChild(divElement);
+//    divElement.append(document.createElement('hr'));
+//}
+
+
+
 
 
