@@ -27,7 +27,7 @@
 //    let ids = !!(e.target.id) ? `Id елемента - ${e.target.id}` : 'В цього елементу немає id';
 //    alert(`Назва тегу - ${e.target.localName}\n${classes}\n${ids}\nВисота: ${e.target.clientHeight}px * ширина : ${e.target.clientWidth}px`);
 //}
-
+//123
 //-- взять массив пользователей
 let usersWithAddress = [
     {id: 1, name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
