@@ -27,85 +27,78 @@
 //    let ids = !!(e.target.id) ? `Id елемента - ${e.target.id}` : 'В цього елементу немає id';
 //    alert(`Назва тегу - ${e.target.localName}\n${classes}\n${ids}\nВисота: ${e.target.clientHeight}px * ширина : ${e.target.clientWidth}px`);
 //}
-//123
+
+//- Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
+//================resolve=============
+//let images = ["images/1.jpg", "images/2.jpg", "images/3.jpg", "images/4.jpg", "images/5.jpg"]
+//let mainDiv = document.createElement('div');
+//mainDiv.style.width = 'fit-content'
+//let btnLeft = document.createElement('button');
+//let img = document.createElement('img');
+//img.src = images[0];
+//img.style.width = '500px'
+//img.style.height = '300px'
+//btnLeft.innerText = '<-';
+//let i = 0;
+//btnLeft.onclick = function () {
+//    i--;
+//    if (i < 0) {
+//        i = images.length - 1;
+//    }
+//    img.src = images[i];
+//}
+//
+//let btnRight = document.createElement('button');
+//btnRight.onclick = function () {
+//    i++;
+//    if (i > images.length - 1) {
+//        i = 0;
+//    }
+//    img.src = images[i];
+//}
+//btnRight.innerText = '->'
+//btnLeft.style.position = 'absolute';
+//btnLeft.style.top = '150px';
+//btnLeft.style.opacity = '0.4';
+//btnRight.style.position = 'absolute';
+//btnRight.style.top = '150px';
+//btnRight.style.opacity = '0.4';
+//btnRight.style.left = '480px';
+//mainDiv.append(btnLeft, img, btnRight)
+//document.body.appendChild(mainDiv);
+
+//    Завдання важке для розуміння, але дуже легке в реалізації. Тут треба буде погуглити
+//*** При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
+//==========resolve=================
+document.onmousedown = function (e) {
+    console.log(e)
+    e.target.style.textDecoration = 'overline'
+    let string = e.target.innerText.split('');
+
+
+}
+
 //-- взять массив пользователей
-let usersWithAddress = [
-    {id: 1, name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
-    {id: 2, name: 'petya', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 1}},
-    {id: 3, name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}},
-    {id: 4, name: 'olya', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 90}},
-    {id: 5, name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}},
-    {id: 6, name: 'anya', age: 31, status: false, address: {city: 'Kyiv', street: 'Shevchenko', number: 2}},
-    {id: 7, name: 'oleg', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 22}},
-    {id: 8, name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}},
-    {id: 9, name: 'masha', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 12}},
-    {id: 10, name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
-    {id: 11, name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
-];
+//let usersWithAddress = [
+//    {id: 1, name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+//    {id: 2, name: 'petya', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 1}},
+//    {id: 3, name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}},
+//    {id: 4, name: 'olya', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 90}},
+//    {id: 5, name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}},
+//    {id: 6, name: 'anya', age: 31, status: false, address: {city: 'Kyiv', street: 'Shevchenko', number: 2}},
+//    {id: 7, name: 'oleg', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 22}},
+//    {id: 8, name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}},
+//    {id: 9, name: 'masha', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 12}},
+//    {id: 10, name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+//    {id: 11, name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
+//];
 //- Создать три чекбокса. Каждый из них активирует фильтр для вышеуказаного массива. Фильтры могут работать как вместе так и по отдельности.
 //1й - отфильтровывает пользователей со статусом false (осталяет со статусом false)
 //2й - оставляет старше 29 лет включительно
 //3й - оставляет тех у кого город киев
 //Данные выводить в документ
-let arr = function (usersWithAddress) {
-    for (const user of usersWithAddress) {
-        let div = document.createElement('div');
-        for (const key in user) {
-            if (typeof (user[key]) !== "object") {
-                let div1 = document.createElement('div');
-                div1.innerText = `${key} : ${user[key]} ,  `
-                div.appendChild(div1);
-            } else {
-                for (const key2 in user[key]) {
-                    let div2 = document.createElement('div');
-                    div2.innerText = ` ${key2} : ${user[key][key2]} ,`
-                    div.appendChild(div2);
-                }
-            }
-        }
-        document.body.appendChild(div);
-        div.style.display = 'flex'
-        div.classList.add('main')
-    }
-}
-let newArr=[]
-let input = document.createElement('input');
-let input2 = document.createElement('input');
-let input3 = document.createElement('input');
-input.setAttribute('type', 'checkbox');
-input2.setAttribute('type', 'checkbox');
-input3.setAttribute('type', 'checkbox');
-document.body.append(input, input2, input3);
-input.onclick = function () {
-    if (this.checked) {
-       newArr=usersWithAddress.filter(value => !value.status);
-        arr(newArr)
-    }
-
-}
-input2.onclick = function () {
-    if (this.checked) {
-        newArr=usersWithAddress.filter(value => value.age>=29);
-        arr(newArr)
-
-    }
-}
 
 //*****(Прям овердоз с рекурсией) Создать функцию которая принимает какой-либо элемент DOM-структуры .Функция создает в боди 2 кнопки (назад/вперед)
 //при нажатии вперед, вы переходите к дочернему элементу, при еще одном нажатии на "вперед", вы переходите к следующему дочернему элементу (лежащему на одном уровне)
 //НО если у (какого-либо)дочеренего элемента есть дети, то нажатие "вперед" позволяет нам войти внутрь элемента и  выводит первого ребенка. и тд.
 //    Когда все дети заканчиваются, мы выходим из данного дочернего элемента и переходим к следующему, лежащему с ним на одном уровне
-
-//- Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
-
-//    Завдання важке для розуміння, але дуже легке в реалізації. Тут треба буде погуглити
-//*** При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
-
-
-//document.onmousedown = function (e) {
-//    console.log(e)
-//    e.target.style.textDecoration = 'overline'
-//    let string = e.target.innerText.split('');
-//
-//
-//}
