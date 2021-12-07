@@ -70,13 +70,10 @@
 //    Завдання важке для розуміння, але дуже легке в реалізації. Тут треба буде погуглити
 //*** При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
 //==========resolve=================
-document.onmousedown = function (e) {
-    console.log(e)
-    e.target.style.textDecoration = 'overline'
-    let string = e.target.innerText.split('');
-
-
-}
+//document.onmouseup = function (e) {
+//document.designMode='on';
+//document.execCommand('italic');
+//}
 
 //-- взять массив пользователей
 //let usersWithAddress = [
@@ -93,7 +90,7 @@ document.onmousedown = function (e) {
 //    {id: 11, name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
 //];
 //- Создать три чекбокса. Каждый из них активирует фильтр для вышеуказаного массива. Фильтры могут работать как вместе так и по отдельности.
-//1й - отфильтровывает пользователей со статусом false (осталяет со статусом false)
+//1й - отфильтровывает пользователей со статусом false (оставляет со статусом false)
 //2й - оставляет старше 29 лет включительно
 //3й - оставляет тех у кого город киев
 //Данные выводить в документ
