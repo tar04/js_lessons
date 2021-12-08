@@ -76,24 +76,84 @@
 //}
 
 //-- взять массив пользователей
-//let usersWithAddress = [
-//    {id: 1, name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
-//    {id: 2, name: 'petya', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 1}},
-//    {id: 3, name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}},
-//    {id: 4, name: 'olya', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 90}},
-//    {id: 5, name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}},
-//    {id: 6, name: 'anya', age: 31, status: false, address: {city: 'Kyiv', street: 'Shevchenko', number: 2}},
-//    {id: 7, name: 'oleg', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 22}},
-//    {id: 8, name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}},
-//    {id: 9, name: 'masha', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 12}},
-//    {id: 10, name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
-//    {id: 11, name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
-//];
+let usersWithAddress = [
+    {id: 1, name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+    {id: 2, name: 'petya', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 1}},
+    {id: 3, name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}},
+    {id: 4, name: 'olya', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 90}},
+    {id: 5, name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}},
+    {id: 6, name: 'anya', age: 31, status: false, address: {city: 'Kyiv', street: 'Shevchenko', number: 2}},
+    {id: 7, name: 'oleg', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 22}},
+    {id: 8, name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}},
+    {id: 9, name: 'masha', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 12}},
+    {id: 10, name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+    {id: 11, name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
+];
 //- Создать три чекбокса. Каждый из них активирует фильтр для вышеуказаного массива. Фильтры могут работать как вместе так и по отдельности.
 //1й - отфильтровывает пользователей со статусом false (оставляет со статусом false)
 //2й - оставляет старше 29 лет включительно
 //3й - оставляет тех у кого город киев
 //Данные выводить в документ
+let input1 = document.createElement('input');
+input1.setAttribute('type', 'checkbox');
+let input2 = input1.cloneNode(true);
+let input3 = input1.cloneNode(true);
+document.body.append(input1, input2, input3);
+for (const element of usersWithAddress) {
+    let div = document.createElement('div');
+    div.style.display = 'none';
+    for (const key in element) {
+        if (typeof element[key] !== "object") {
+            div.innerText += `${key} : ${element[key]}, `
+        } else {
+            for (const key2 in element[key]) {
+                div.innerText += `${key2} : ${element[key][key2]}, `
+            }
+        }
+    }
+    document.body.appendChild(div);
+}
+let divArr = document.getElementsByTagName("div");
+
+input1.onclick = function () {
+    if (this.checked) {
+        for (let i = 0; i < usersWithAddress.length; i++) {
+            if (usersWithAddress[i].status === false) {
+                divArr[i].style.display = 'block';
+            }
+        }
+    } else {
+        for (let i = 0; i < divArr.length; i++) {
+            divArr[i].style.display = 'none';
+        }
+    }
+}
+input2.onclick = function () {
+    if (this.checked) {
+        for (let i = 0; i < usersWithAddress.length; i++) {
+            if (usersWithAddress[i].age >= 29) {
+                divArr[i].style.display = 'block';
+            }
+        }
+    } else {
+        for (let i = 0; i < divArr.length; i++) {
+            divArr[i].style.display = 'none';
+        }
+    }
+}
+input3.onclick = function () {
+    if (this.checked) {
+        for (let i = 0; i < usersWithAddress.length; i++) {
+            if (usersWithAddress[i].address.city === 'Kyiv') {
+                divArr[i].style.display = 'block';
+            }
+        }
+    } else {
+        for (let i = 0; i < divArr.length; i++) {
+            divArr[i].style.display = 'none';
+        }
+    }
+}
 
 //*****(Прям овердоз с рекурсией) Создать функцию которая принимает какой-либо элемент DOM-структуры .Функция создает в боди 2 кнопки (назад/вперед)
 //при нажатии вперед, вы переходите к дочернему элементу, при еще одном нажатии на "вперед", вы переходите к следующему дочернему элементу (лежащему на одном уровне)
