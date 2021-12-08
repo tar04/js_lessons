@@ -96,12 +96,14 @@ let usersWithAddress = [
 //Данные выводить в документ
 let input1 = document.createElement('input');
 input1.setAttribute('type', 'checkbox');
-let input2 = input1.cloneNode(true);
-let input3 = input1.cloneNode(true);
+let input2 = document.createElement('input');
+input2.setAttribute('type', 'checkbox');
+let input3 = document.createElement('input');
+input3.setAttribute('type', 'checkbox');
 document.body.append(input1, input2, input3);
 for (const element of usersWithAddress) {
     let div = document.createElement('div');
-    div.style.display = 'none';
+    div.style.display = 'block';
     for (const key in element) {
         if (typeof element[key] !== "object") {
             div.innerText += `${key} : ${element[key]}, `
@@ -114,43 +116,30 @@ for (const element of usersWithAddress) {
     document.body.appendChild(div);
 }
 let divArr = document.getElementsByTagName("div");
-
 input1.onclick = function () {
     if (this.checked) {
         for (let i = 0; i < usersWithAddress.length; i++) {
-            if (usersWithAddress[i].status === false) {
-                divArr[i].style.display = 'block';
+            if (usersWithAddress[i].status === true) {
+                divArr[i].style.display = 'none';
             }
-        }
-    } else {
-        for (let i = 0; i < divArr.length; i++) {
-            divArr[i].style.display = 'none';
         }
     }
 }
 input2.onclick = function () {
     if (this.checked) {
         for (let i = 0; i < usersWithAddress.length; i++) {
-            if (usersWithAddress[i].age >= 29) {
-                divArr[i].style.display = 'block';
+            if (!(usersWithAddress[i].age>=29)) {
+                divArr[i].style.display = 'none';
             }
-        }
-    } else {
-        for (let i = 0; i < divArr.length; i++) {
-            divArr[i].style.display = 'none';
         }
     }
 }
 input3.onclick = function () {
     if (this.checked) {
         for (let i = 0; i < usersWithAddress.length; i++) {
-            if (usersWithAddress[i].address.city === 'Kyiv') {
-                divArr[i].style.display = 'block';
+            if (!(usersWithAddress[i].address.city === 'Kyiv')) {
+                divArr[i].style.display = 'none';
             }
-        }
-    } else {
-        for (let i = 0; i < divArr.length; i++) {
-            divArr[i].style.display = 'none';
         }
     }
 }
