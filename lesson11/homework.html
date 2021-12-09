@@ -6,8 +6,29 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+
+        input {
+            width: 200px;
+        }
+        button{
+            width: fit-content;
+            padding: 5px;
+        }
+    </style>
 </head>
 <body>
+<form action="" name="carInput">
+    Model: <input type="text" name="model">
+    Type: <input type="text" name="type">
+    Volume: <input type="number" name="volume">
+    <button>Send</button>
+</form>
 <script src="homework.js"></script>
 </body>
 </html>
