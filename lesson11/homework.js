@@ -34,7 +34,6 @@
 //    let volume = this.volume.value;
 //    let car = {model, type, volume};
 //    let cars = JSON.parse(localStorage.getItem('Cars'));
-//    console.log(cars)
 //    !cars ? (cars = [], cars.push(car)) : cars.push(car);
 //    localStorage.setItem('Cars', JSON.stringify(cars));
 //}
