@@ -50,7 +50,6 @@ fetch('https://jsonplaceholder.typicode.com/users')
                                 btn2.innerText = 'Load comments';
                                 btn2.style.marginTop = '8px';
                                 btn2.onclick = function () {
-                                    console.log(2)
                                     fetch('https://jsonplaceholder.typicode.com/comments')
                                         .then(response => response.json())
                                         .then(comments => {
