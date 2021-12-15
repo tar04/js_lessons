@@ -27,8 +27,8 @@ for (const item of goods) {
                 goods.splice((goods.indexOf(item1)), 1);
             }
         }
-        console.log(goods.indexOf(goods.includes(item.id)));
         localStorage.setItem('Goods', JSON.stringify(goods));
+        location.reload();
     }
     div.append(name, count, price, image, button);
     mainDiv.appendChild(div);
