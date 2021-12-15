@@ -20,18 +20,21 @@ for (const item of goods) {
     div.style.margin = '10px';
     div.style.padding = '10px';
     let button = document.createElement('button');
-    button.innerText = 'Видалити цей товар'
+    button.innerText = 'Видалити цей товар';
     button.onclick = function () {
-        goods.splice(goods.indexOf(item), 1);
+        for (const item1 of goods) {
+            if (item1 === item) {
+                goods.splice((goods.indexOf(item1)), 1);
+            }
+        }
+        console.log(goods.indexOf(goods.includes(item.id)));
         localStorage.setItem('Goods', JSON.stringify(goods));
-        button.disabled = true;
     }
     div.append(name, count, price, image, button);
     mainDiv.appendChild(div);
 }
 let deleteBtn = document.getElementById('deleteAll');
-deleteBtn.onclick = function (e) {
-    e.preventDefault();
-    document.getElementById('products').style.display = 'none';
+deleteBtn.onclick = function () {
     localStorage.removeItem('Goods');
+    location.reload();
 }

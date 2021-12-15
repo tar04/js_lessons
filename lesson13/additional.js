@@ -18,7 +18,7 @@ document.forms.f1.onsubmit = function (e) {
     let image = document.forms.f1.Image.value;
     let item = {name, count, price, image};
     let Goods = JSON.parse(localStorage.getItem('Goods')) || [];
-    item.id = Goods[Goods.length-1]?.id+1||1
+    //item.id = Goods[Goods.length - 1]?.id + 1 || 1;
     Goods.push(item);
     localStorage.setItem('Goods', JSON.stringify(Goods));
     document.forms.f1.Name.value = '';
