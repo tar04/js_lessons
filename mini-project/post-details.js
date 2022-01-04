@@ -1,6 +1,8 @@
 let url = new URL(location.href);
 let postId = url.searchParams.get('postid');
 let userId = url.searchParams.get('userid');
+
+
 let mainDiv = document.createElement('div');
 document.body.appendChild(mainDiv);
 fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts?id=${postId}`)
