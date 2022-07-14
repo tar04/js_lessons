@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+
+    //- створити функцію яка приймає масив чисел та повертає середнє арифметичне його значень.
+    // let avgVal = (arr) => {
+    //     let avg = 0;
+    //     for (const arrElement of arr) {
+    //         avg += arrElement
+    //     }
+    //     return avg / arr.length
+    // }
+    // console.log(avgVal([1, -1234, 2]));
+
+    // - створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше (Math використовувати заборонено);
+    // let minMax = (...arr) => {
+    //
+    //     let min = arr[0];
+    //     let max = arr[0];
+    //
+    //     for (const element of arr) {
+    //         if (element > max) {
+    //             max = element;
+    //         }
+    //         if (element < min) {
+    //             min = element;
+    //         }
+    //
+    //     }
+    //     console.log(max);
+    //     return min;
+    //
+    // }
+    // console.log(minMax(123,56,31,-5,1), '-min');
+
+    // - створити функцію яка заповнює масив рандомними числами
+    // (цей код генерує рандомні числа в діапазоні від 0 до 100 - Math.round(Math.random()*100)) та виводить його.
+    // let arrRandomizer=(length)=>{
+    //     let arr=[];
+    //
+    //     for (let i = 0; i < length; i++) {
+    //         let arr[i]=Math.round(Math.random()*100)
+    //     }
+    //
+    //     return arr;
+    // }
+
+    // let arrRandomizer = (length, arr = [], i = 0) => {
+    //     if (length<=0){
+    //         return []
+    //     }
+    //     arr[i] = Math.round(Math.random() * 100)
+    //     i++;
+    //     if (i < length) {
+    //         return arrRandomizer(length, arr, i);
+    //     }
+    //     return arr;
+    // }
+    // console.log(arrRandomizer(123));
+
+    // - створити функцію яка заповнює масив рандомними числами в діапазоні від 0 до limit. limit - аргумент,
+    // який характеризує кінцеве значення діапазону.
+    // let randomizer=(limit)=>{
+    //     let arr=[];
+    //
+    //     for (let i = 0; i < 10; i++) {
+    //         arr[i]=Math.floor(Math.random()*limit)
+    //     }
+    //     return arr;
+    //
+    // }
+    // console.log(randomizer(2));
+
+    // - Функція приймає масив та робить з нього новий масив в зворотньому порядку. [1,2,3] -> [3, 2, 1].
+    // let reverse=(arr)=>{
+    //     let copy=[]
+    //     for (let i = 0,ri=arr.length-1; i < arr.length; i++,ri--) {
+    //         copy[ri]=arr[i]
+    //     }
+    //     return copy;
+    // }
+    // console.log(reverse([1,2,3,0,123]));
+
+    // -створити функцію, яка приймає масив з 2х об'єктів, та міняє їх місцями.
+    let switcher = (arr) => {
+        let [a, b] = arr;
+        return [b, a]
+    }
+    console.log(switcher([{mommy: 'Ira', age: 42}, {model: 'Apple'}]))
+
+</script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    // - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
+    // function rectSq(a,b) {
+    //     return a*b;
+    // }
+    //
+    // console.log(rectSq(2,4))
+
+    // - створити функцію яка обчислює та повертає площу кола з радіусом r
+    // function circleSq(r) {
+    //     return Math.PI*r**2
+    // }
+    //
+    // console.log(circleSq(2))
+
+    // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
+    // function cylSq(h, r) {
+    //     return 2*Math.PI*r*(h+r)
+    // }
+    //
+    //console.log(cylSq(5,4))
+
+    // - створити функцію яка приймає масив та виводить кожен його елемент
+    // function logArr(arr) {
+    //     for (const arrElement of arr) {
+    //         console.log(arrElement)
+    //     }
+    // }
+    // logArr([5,1,55])
+
+    // - створити функцію яка створює параграф з текстом. Текст задати через аргумент
+    // function paragraphCreator(str) {
+    //     document.write(`<p>${str}</p>`)
+    // }
+    // paragraphCreator('hel')
+    // paragraphCreator('hel')
+
+    // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
+    //     function listCreator(str) {
+    //         document.write(`
+    //             <ul>
+    //                 <li>${str}</li>
+    //                 <li>${str}</li>
+    //                 <li>${str}</li>
+    //             </ul>
+    // `)
+    //     }
+    //     listCreator('11')
+
+    // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий.
+    // Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
+    // function listCreator(str, count) {
+    //     document.write(`<ul>`)
+    //     for (let i = 0; i < count; i++) {
+    //         document.write(`<li>${str}</li>`)
+    //     }
+    //     document.write(`</ul>`)
+    // }
+    // listCreator('112',51)
+
+    // // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
+    // function listCreator(arr) {
+    //     document.write(`<ul>`)
+    //     for (const arrElement of arr) {
+    //         document.write(`<li>${arrElement}</li>`)
+    //     }
+    //     document.write(`</ul>`)
+    // }
+    // listCreator([1,'dfg',true,2,5,'false'])
+
+    // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ.
+    // Для кожного об'єкту окремий блок.
+    // function listCreator(arr) {
+    //     document.write(`<div>`)
+    //     for (const person of arr) {
+    //         for (const key in person) {
+    //             document.write(`<div>${key}: ${person[key]}</div>`)
+    //         }
+    //         document.write(`<hr>`)
+    //     }
+    //     document.write(`</div>`)
+    // }
+    //
+    // listCreator([{id: 1, name: 'Taras', age: 20},
+    //     {id: 2, name: 'Matthew', age: 12},
+    //     {id: 3, name: 'Max', age: 11},
+    //     {id: 4, name: 'Ihor', age: 22}
+    // ])
+
+    // - створити функцію яка повертає найменьше число з масиву
+    // function arrMin(arr) {
+    //     let min=arr[0];
+    //     for (const arrElement of arr) {
+    //         if (arrElement<min){
+    //             min=arrElement
+    //         }
+    //     }
+    //     console.log(min)
+    // }
+    // arrMin([1,42]);
+
+    // - створити функцію яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад [1,2,10]->13
+    // function arrCount(arr) {
+    //     let count=0;
+    //     for (const arrElement of arr) {
+    //         count+=arrElement;
+    //     }
+    //     return count
+    // }
+    // console.log(arrCount([1,2,10]));
+
+// --------------------------ADD----------------------------
+//     function arrCounter(arr1, arr2) {
+//         let arr = [];
+//         if (arr1.length === arr2.length) {
+//             for (let i = 0; i < arr1.length; i++) {
+//                 arr[i] = arr1[i] + arr2[i];
+//             }
+//         }
+//         return arr;
+//     }
+//
+//     console.log(arrCounter([1,2,3,4],[2,3,4,5]))
+
+    // function keyRet(arr) {
+    //     let arr1=[]
+    //     for (const arrElement of arr) {
+    //         for (const key in arrElement) {
+    //             arr1.push(arrElement[key])
+    //         }
+    //     }
+    //     return arr1;
+    // }
+
+    // console.log(keyRet([{name: 'Dima', age: 23}, {model: 'Camry'}]));
+
+
+</script>
+<body>
+</body>
+</html>
