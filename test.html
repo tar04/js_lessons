@@ -6,7 +6,15 @@
 </head>
 <body>
 <script>
-    console.log(document.getElementsByClassName('tr'));
+let users=[
+    {name:'Taras'},
+    {name:'Ihor'}
+];
+
+    let users2=[...users]
+users2[1].age=5;
+    users2.push(123)
+console.log(users);
 </script>
 </body>
 </html>
