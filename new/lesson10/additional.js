@@ -80,10 +80,7 @@ function showUsers(users) {
 function usersManipulator() {
     let users = [...usersWithAddress];
     return {
-        changeUsers: (condition) => {
-            users = users.filter(condition);
-            return users;
-        },
+        changeUsers: (condition) => users = users.filter(condition),
         resetUsers: () => users = [...usersWithAddress]
     };
 }
@@ -91,29 +88,34 @@ function usersManipulator() {
 const {changeUsers, resetUsers} = usersManipulator();
 
 const lab1 = document.createElement('h2');
-lab1.innerText = 'status=false'
+lab1.innerText = "users with status 'false'";
 const lab2 = document.createElement('h2');
-lab2.innerText = '29 yo and older'
+lab2.innerText = 'users that are 29 yo and older';
 const lab3 = document.createElement('h2');
-lab3.innerText = 'city=Kyiv'
+lab3.innerText = 'users that living in Kyiv';
 
 const form = document.createElement('form');
 form.id = 'f1';
+form.style.display = 'flex';
+form.style.justifyContent = 'space-around';
 const check1 = document.createElement('input');
 
 check1.name = 'check1';
 check1.type = 'checkbox'
-const check2 = check1.cloneNode(true)
+const check2 = check1.cloneNode(true);
 
 check2.name = 'check2';
-const check3 = check1.cloneNode(true)
+const check3 = check1.cloneNode(true);
 
 check3.name = 'check3';
 form.append(lab1, check1, lab2, check2, lab3, check3);
 
 document.body.appendChild(form);
 
+document.body.appendChild(showUsers(usersWithAddress));
+
 form.onchange = function () {
+
     let users = resetUsers();
     const usersElement = document.getElementById('users');
 
@@ -147,7 +149,9 @@ form.onchange = function () {
             usersElement.remove();
         }
     }
+
     document.body.appendChild(showUsers(users));
+
 }
 
 //*****(Прям овердоз с рекурсией) Создать функцию которая принимает какой-либо элемент DOM-структуры .Функция создает в боди 2 кнопки (назад/вперед)
