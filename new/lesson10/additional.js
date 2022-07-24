@@ -67,7 +67,7 @@ let usersWithAddress = [
 //===========resolve==============
 function showUsers(users) {
     const main = document.createElement('div');
-    main.id='users';
+    main.id = 'users';
     for (const user of users) {
         const h4 = document.createElement('h4');
         h4.innerText = `Id: ${user.id}, name: ${user.name}, ${user.age}, status: ${user.status}. Address: ${user.address.city}, ${user.address.street} street, ${user.address.number}`
@@ -85,11 +85,14 @@ function usersManipulator() {
         },
         resetUsers: () => {
             users = [...usersWithAddress]
+        },
+        getPrevUsers: () => {
+            return [...users];
         }
     };
 }
 
-const {changeUsers, resetUsers} = usersManipulator();
+const {changeUsers, resetUsers, getPrevUsers} = usersManipulator();
 
 const lab1 = document.createElement('h2');
 lab1.innerText = 'status=false'
@@ -115,34 +118,33 @@ check3.name = 'check3';
 form.append(lab1, check1, lab2, check2, lab3, check3);
 
 check1.onclick = function () {
-    const main = showUsers(changeUsers(u => !u.status));
+    let prevUsers = getPrevUsers();
+    let main = showUsers(changeUsers(u => !u.status));
     if (this.checked) {
         document.body.appendChild(main)
     } else {
-        resetUsers()
-        document.body.removeChild(main)
-        main.remove()
+        document.body.appendChild(showUsers(prevUsers));
     }
 
 }
 
 check2.onclick = function () {
+    let prevUsers = getPrevUsers();
     const main = showUsers(changeUsers(u => u.age >= 29));
-
     if (this.checked) {
         document.body.appendChild(main)
     } else {
-
+        document.body.appendChild(showUsers(prevUsers));
     }
 }
 
 check3.onclick = function () {
+    let prevUsers = getPrevUsers();
     const main = showUsers(changeUsers(u => u.address.city === 'Kyiv'));
-
     if (this.checked) {
         document.body.appendChild(main)
     } else {
-
+        document.body.appendChild(showUsers(prevUsers));
     }
 }
 

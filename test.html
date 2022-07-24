@@ -6,15 +6,14 @@
 </head>
 <body>
 <script>
-let users=[
-    {name:'Taras'},
-    {name:'Ihor'}
-];
+    const settings={
+        username:'lydia',
+        level:19,
+        health:90
+    }
 
-    let users2=[...users]
-users2[1].age=5;
-    users2.push(123)
-console.log(users);
+    const data=JSON.stringify(settings,['level', 'health'])
+    console.log(data)
 </script>
 </body>
 </html>
