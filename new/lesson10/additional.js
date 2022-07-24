@@ -70,7 +70,8 @@ function showUsers(users) {
     main.id = 'users';
     for (const user of users) {
         const h4 = document.createElement('h4');
-        h4.innerText = `Id: ${user.id}, name: ${user.name}, ${user.age}, status: ${user.status}. Address: ${user.address.city}, ${user.address.street} street, ${user.address.number}`
+        h4.innerText = `Id: ${user.id}, name: ${user.name}, ${user.age}, status: ${user.status}. \
+        Address: ${user.address.city}, ${user.address.street} street, ${user.address.number}`
         main.appendChild(h4)
     }
     return main;
@@ -83,16 +84,11 @@ function usersManipulator() {
             users = users.filter(condition);
             return users;
         },
-        resetUsers: () => {
-            users = [...usersWithAddress]
-        },
-        getPrevUsers: () => {
-            return [...users];
-        }
+        resetUsers: () => users = [...usersWithAddress]
     };
 }
 
-const {changeUsers, resetUsers, getPrevUsers} = usersManipulator();
+const {changeUsers, resetUsers} = usersManipulator();
 
 const lab1 = document.createElement('h2');
 lab1.innerText = 'status=false'
@@ -103,49 +99,55 @@ lab3.innerText = 'city=Kyiv'
 
 const form = document.createElement('form');
 form.id = 'f1';
-document.body.appendChild(form);
-
 const check1 = document.createElement('input');
+
 check1.name = 'check1';
 check1.type = 'checkbox'
-
 const check2 = check1.cloneNode(true)
+
 check2.name = 'check2';
-
 const check3 = check1.cloneNode(true)
-check3.name = 'check3';
 
+check3.name = 'check3';
 form.append(lab1, check1, lab2, check2, lab3, check3);
 
-check1.onclick = function () {
-    let prevUsers = getPrevUsers();
-    let main = showUsers(changeUsers(u => !u.status));
-    if (this.checked) {
-        document.body.appendChild(main)
-    } else {
-        document.body.appendChild(showUsers(prevUsers));
-    }
+document.body.appendChild(form);
 
-}
+form.onchange = function () {
+    let users = resetUsers();
+    const usersElement = document.getElementById('users');
 
-check2.onclick = function () {
-    let prevUsers = getPrevUsers();
-    const main = showUsers(changeUsers(u => u.age >= 29));
-    if (this.checked) {
-        document.body.appendChild(main)
+    if (check1.checked) {
+        if (usersElement) {
+            usersElement.remove()
+        }
+        users = changeUsers(u => !u.status);
     } else {
-        document.body.appendChild(showUsers(prevUsers));
+        if (usersElement) {
+            usersElement.remove();
+        }
     }
-}
-
-check3.onclick = function () {
-    let prevUsers = getPrevUsers();
-    const main = showUsers(changeUsers(u => u.address.city === 'Kyiv'));
-    if (this.checked) {
-        document.body.appendChild(main)
+    if (check2.checked) {
+        if (usersElement) {
+            usersElement.remove()
+        }
+        users = changeUsers(u => u.age >= 29);
     } else {
-        document.body.appendChild(showUsers(prevUsers));
+        if (usersElement) {
+            usersElement.remove();
+        }
     }
+    if (check3.checked) {
+        if (usersElement) {
+            usersElement.remove()
+        }
+        users = changeUsers(u => u.address.city === 'Kyiv');
+    } else {
+        if (usersElement) {
+            usersElement.remove();
+        }
+    }
+    document.body.appendChild(showUsers(users));
 }
 
 //*****(Прям овердоз с рекурсией) Создать функцию которая принимает какой-либо элемент DOM-структуры .Функция создает в боди 2 кнопки (назад/вперед)
