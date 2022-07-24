@@ -22,11 +22,11 @@
 //    При лівому кліку миші  зробить popup (спливаючий блок) в якому буде вся інформація про блок.
 //    Інформація яку потрібно вивести в popup: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
 //=========resolve================
-//document.onclick = function (e) {
-//    let classes = !!(e.target.classList.length) ? `Список класів - ${e.target.classList}` : 'В цього елементу немає класів';
-//    let ids = !!(e.target.id) ? `Id елемента - ${e.target.id}` : 'В цього елементу немає id';
-//    alert(`Назва тегу - ${e.target.localName}\n${classes}\n${ids}\nВисота: ${e.target.clientHeight}px * ширина : ${e.target.clientWidth}px`);
-//}
+document.onclick = function (e) {
+   let classes = !!(e.target.classList.length) ? `Список класів - ${e.target.classList}` : 'В цього елементу немає класів';
+   let ids = !!(e.target.id) ? `Id елемента - ${e.target.id}` : 'В цього елементу немає id';
+   alert(`Назва тегу - ${e.target.localName}\n${classes}\n${ids}\nВисота: ${e.target.clientHeight}px * ширина : ${e.target.clientWidth}px`);
+}
 
 //- Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
 //================resolve=============
