@@ -19,6 +19,7 @@
 //form.onsubmit = function (e) {
 //    e.preventDefault();
 //    let userName = name.value;
+
 //    let userAge = age.value;
 //    localStorage.setItem('user', JSON.stringify({name: userName, age: userAge}));
 //}
