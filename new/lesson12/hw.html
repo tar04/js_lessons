@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+
+    // 1.
+    // Отримати відповідь з цього ресурсу відповідь, та вивести в документ об'єкти. Застилізувати, за допомоги css, щоб отримати 5 елементів в рядку.
+    // Для кожного елементу свій блок div.post
+    // Всі характеристики повинні мати свої блоки всередені div.post
+    // https://jsonplaceholder.typicode.com/posts
+    //
+    // fetch('https://jsonplaceholder.typicode.com/posts')
+    //     .then(response => response.json())
+    //     .then(posts => {
+    //         const postsDiv = document.createElement('div');
+    //         postsDiv.style.display='flex';
+    //         postsDiv.style.flexWrap='wrap'
+    //         document.body.appendChild(postsDiv)
+    //         for (const post of posts) {
+    //             const main = document.createElement('div');
+    //             main.classList.add('post');
+    //             main.style.maxWidth='20%'
+    //             const h2 = document.createElement("h2");
+    //             h2.innerText = `User id: ${post.userId}`
+    //             const h3 = document.createElement("h23");
+    //             h3.innerText = `${post.id}) ${post.title}`
+    //             let p = document.createElement('p');
+    //             p.innerText = post.body;
+    //             main.append(h2, h3, p)
+    //             postsDiv.appendChild(main)
+    //         }
+    //     })
+
+
+    //         2.
+    // Отримати відповідь з цього ресурсу відповідь, та вивести в документ як в прикладі на занятті.
+    //         Для кожного елементу свій блок div.comment
+    // Всі характеристики повинні мати свої блоки всередені div.comment
+    // https://jsonplaceholder.typicode.com/comments
+
+    fetch('https://jsonplaceholder.typicode.com/comments')
+        .then(response => response.json())
+        .then(comments => {
+            let commDiv = document.createElement('div');
+            document.body.appendChild(commDiv);
+            for (const comment of comments) {
+                const main = document.createElement('div');
+                main.classList.add('comment')
+                let h2 = document.createElement('h2');
+                h2.innerText = `Post id: ${comment.postId}`
+                let h3 = document.createElement('h3');
+                h3.innerText = `${comment.id}) ${comment.name}`
+                let p=document.createElement('p');
+                p.innerText=`${comment.email} writes
+                ${comment.body}`
+                main.append(h2,h3,p)
+                commDiv.appendChild(main);
+            }
+        })
+
+</script>
+</body>
+</html>
