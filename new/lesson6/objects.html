@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let obj1 = {
+        name: 'Taras',
+        wife: {
+            name: 'Ira'
+        }
+    };
+
+    let obj2 = {
+        name: 'Ihor',
+        age: 21
+    }
+
+    // let neObj=obj1;  -  посилання на obj1
+
+    // 1)const assign = Object.assign({},obj1,obj2); - копіювання об'єкта. Перший аргумент - власне об'єкт, в який копіюємо,
+    // другий аргумент- будь яка кількість об'єктів з якої копіюємо. Можна об'єднювати багато об'єктів в один. Але при цьому,
+    // якщо є вкладені об'єкти, то в новому об'єкті буде зберігатись посилання на них. Також, якщо в об'єктах, які об'єднюємо,
+    // є однакові поля, то в цільовому об'єкті буде збережена остання властивість, тобто порядок за яким передаються об'єкти в аргументи грає роль
+    //console.log(assign);
+
+    // const assign2 = Object.assign(obj1,obj2); - якщо першим аргументом є посилання на інший об'єкт, тоді цей об'єкт теж зміниться
+    // console.log(assign2);
+
+    // 2)console.log(Object.keys(obj1)); - повертає масив ключів об'єкта, в даному випадку : ['name','wife']
+
+    // 3)console.log(Object.values(obj1));  - повертає масив значеть об'єкта, в даному випадку : ['Taras',{name: 'Ira'}]
+
+    // 4)console.log(Object.entries(obj1)); - повертає масив масивів у вигляді пари ключ-значення : [['name','Taras'],['wife',{name: 'Ira'}]]
+
+    // 5) Object.fromEntries(Object.entries(obj1)) зворотній до попереднього, із масива масивів ключ-значення робить об'єкт
+
+    // 6) console.log(Object.freeze(obj1)); - Метод перешкоджає зміні наявних властивостей або додаванню нових властивостей об'єкту.
+    // За своїми властивостями .freeze() дуже схожий на звичний усім кваліфікатор const. Але const, на противагу, дозволяє модифікувати об'єкт.
+    // obj1.age=23;
+    // obj1.name='beb'
+    // console.log(obj1)
+    // let obj3={...obj1}
+    // //console.log(Object.isFrozen(obj3)) //false
+    // console.log(Object.isFrozen(JSON.parse(JSON.stringify(obj1)))) //false
+
+    // 7) console.log(Object.seal(obj1)); - Метод забороняє додавати нові властивості об'єктам, але наявні властивості можуть бути змінені.
+    // obj1.age=23;
+    // obj1.name='beb'
+    // console.log(obj1)
+
+    // 8)Object.isFrozen() - повертає булеве значення. Перевірки, чи об'єкт заморожений
+
+    // 9)Object.isSealed() - повертає булеве значення. Перевірки, чи об'єкт запечатаний
+
+    // 10) const person = Object.create(
+    //     {},
+    //     {
+    //         name: {
+    //             value: 'Taras'
+    //         },
+    //         birth: {
+    //             value: 2001
+    //         }
+    //     });
+    // - перший об'єкт є прототипом, другий об'єкт вказує поля для цільового об'єкту, якщо застосувати методи keys,
+    // value, entries або проітерувати ключі, то нічого не буде. Щоб це виправити, потрібно налаштувавати виставити властивості
+    // дескрипторів всередині:
+    const person = Object.create(
+        {},
+        {
+            name: {
+                value: 'Taras',
+                enumerable: true,
+                writable: true,
+                configurable: true
+            },
+            birth: {
+                value: 2001,
+                enumerable: true
+            },
+            age: {
+                get() {
+                    return new Date().getFullYear() - this.birth
+                },
+                set(value) {
+                    console.log('Set age', value)
+                }
+            }
+        });
+
+    //також тут ми не можемо просто так змінити властивості полей, для цього потрібно дописати властивість writable:true.
+    // Configurable:true каже про те, що ми можемо видаляти даний ключ з об'єкта.
+    // Коли прописуємо геттери і сеттери, то ці поля не відображаються в об'єкті, якщо не передати value, але через .age
+    //можна сюди доступитись, щоб викликати сеттер : person .age=12 // Відповідь:
+
+
+
+</script>
+</body>
+</html>

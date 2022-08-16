@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //callback hell
+    // function wakeUp(day, callback) {
+    //
+    //     setTimeout(() => {
+    //         if (day !== 'Sunday') {
+    //             callback(null, 'waking up')
+    //         } else {
+    //             callback('hey!! Wake up', null)
+    //         }
+    //     }, 3000)
+    // }
+    //
+    // function breakfast(areUHungry, callback) {
+    //     setTimeout(() => {
+    //
+    //         if (areUHungry) {
+    //             callback(null, 'having breakfast')
+    //         } else {
+    //             callback('U still heed to eat', null)
+    //         }
+    //     }, 2000)
+    // }
+    //
+    // function goToWork(didYouEat, callback) {
+    //     setTimeout(() => {
+    //
+    //         if (didYouEat) {
+    //             callback(null, 'going to work')
+    //         } else {
+    //             callback('Take food with u', null)
+    //         }
+
+    //     }, 1000)
+    // }
+    //
+    // function dinner(tookFood, callback) {
+    //
+    //     setTimeout(() => {
+    //         if (tookFood) {
+    //             callback(null, 'having dinner')
+    //         } else {
+    //             callback('Its just breakfast((', null)
+    //         }
+    //
+    //     }, 2000)
+    // }
+    //
+    // function work(callback) {
+    //     setTimeout(() => {
+    //         callback(null, 'working')
+    //     }, 4000)
+    // }
+    //
+    // function goHome(workIsDone, callback) {
+    //     setTimeout(() => {
+    //         if (workIsDone) {
+    //             callback(null, 'going home')
+    //         } else {
+    //             callback('U have to end your job at home', null)
+    //         }
+    //     }, 2000)
+    // }
+    //
+    // function study(jobIsFinallyDone, callback) {
+    //     setTimeout(() => {
+    //         if (jobIsFinallyDone) {
+    //             callback(null, 'studying')
+    //         } else {
+    //             callback('end ur fcking job', null)
+    //         }
+    //     }, 3000)
+    // }
+    //
+    // function supper(hungry, callback) {
+    //     setTimeout(() => {
+    //         if (hungry) {
+    //             callback(null, 'having supper')
+    //         } else {
+    //             callback('anyway need to end job xd', null)
+    //         }
+    //     }, 1000)
+    // }
+    //
+    // function sleep(isJobDoneAndNotHungry, callback) {
+    //     setTimeout(() => {
+    //         if (isJobDoneAndNotHungry) {
+    //             callback(null, 'u can go sleep')
+    //         } else {
+    //             callback('go eat and finish job', null)
+    //         }
+    //     }, 1000)
+    // }
+    //
+    // wakeUp('Monday', (err, data) => {
+    //     if (err) {
+    //         console.error(err)
+    //     }
+    //     console.log(data);
+    //     breakfast(true,(err1,data1)=>{
+    //         if (err1) {
+    //             console.error(err1)
+    //         }
+    //         console.log(data1)
+    //         goToWork(true,(err2,data2)=>{
+    //             if (err2){
+    //                 console.error(err2)
+    //             }
+    //             console.log(data2);
+    //             dinner(true,(err3,data3)=>{
+    //                 if (err3){
+    //                     console.error(err3)
+    //                 }
+    //                 console.log(data3);
+    //                 work((err4,data4)=>{
+    //                     if (err4){
+    //                         console.error(err4)
+    //                     }
+    //                     console.log(data4);
+    //                     goHome(false,(err5,data5)=>{
+    //                         if (err5){
+    //                             console.error(err5)
+    //                         }
+    //                         console.log(data5);
+    //                         study(true,(err6,data6)=>{
+    //                             if (err6){
+    //                                 console.error(err6)
+    //                             }
+    //                             console.log(data6);
+    //                             supper(true,(err7,data7)=>{
+    //                                 if (err7){
+    //                                     console.error(err7)
+    //                                 }
+    //                                 console.log(data7);
+    //                                 sleep(true,(err8,data8)=>{
+    //                                     if (err8){
+    //                                         console.error(err8)
+    //                                     }
+    //                                     console.log(data8);
+    //                                 })
+    //                             })
+    //                         })
+    //                     })
+    //                 })
+    //             })
+    //         })
+    //     })
+    // })
+
+    //Promises
+    // function wakeUp(day) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (day !== 'Sunday') {
+    //                 resolve('waking up')
+    //             }
+    //             reject('hey!! Wake up')
+    //         }, 3000)
+    //     })
+    //
+    // }
+    //
+    // function breakfast(areUHungry) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (areUHungry) {
+    //                 resolve('having breakfast')
+    //             }
+    //             reject('U still heed to eat')
+    //         }, 2000)
+    //     })
+    // }
+    //
+    // function goToWork(didYouEat) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (didYouEat) {
+    //                 resolve('going to work')
+    //             }
+    //             reject('Take food with u')
+    //         }, 1000)
+    //     })
+    // }
+    //
+    // function dinner(tookFood) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (tookFood) {
+    //                 resolve('having dinner')
+    //             }
+    //             reject('Its just breakfast((')
+    //         }, 2000)
+    //     })
+    //
+    // }
+    //
+    // function work() {
+    //     return new Promise((resolve) => {
+    //         setTimeout(() => {
+    //             resolve('working')
+    //         }, 4000)
+    //     })
+    //
+    // }
+    //
+    // function goHome(workIsDone) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (workIsDone) {
+    //                 resolve('going home')
+    //             }
+    //             reject('U have to end your job at home',)
+    //         }, 2000)
+    //     })
+    // }
+    //
+    // function study(jobIsFinallyDone) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (jobIsFinallyDone) {
+    //                 resolve('studying')
+    //             }
+    //             reject('end ur fcking job')
+    //
+    //         }, 3000)
+    //     })
+    // }
+    //
+    // function supper(hungry) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (hungry) {
+    //                 resolve('having supper')
+    //             }
+    //             reject('anyway need to end job xd')
+    //         }, 1000)
+    //     })
+    // }
+    //
+    // function sleep(isJobDoneAndNotHungry) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (isJobDoneAndNotHungry) {
+    //                 resolve('u can go sleep')
+    //             }
+    //             reject('go eat and finish job')
+    //         }, 1000)
+    //     })
+    //
+    // }
+    //
+    // wakeUp('Sunday')
+    //     .then(value => {
+    //         console.log(value);
+    //         return breakfast(true)
+    //     })
+    //     .then(value => {
+    //         console.log(value);
+    //         return goToWork(true);
+    //     })
+    //     .then(value => {
+    //         console.log(value);
+    //         return dinner(true);
+    //     })
+    //     .then(value => {
+    //         console.log(value);
+    //         return work();
+    //     })
+    //     .then(value => {
+    //         console.log(value);
+    //         return goHome(true);
+    //     })
+    //     .then(value => {
+    //         console.log(value);
+    //         return study(true);
+    //     })
+    //     .then(value => {
+    //         console.log(value);
+    //         return supper(true);
+    //     })
+    //     .then(value => {
+    //         console.log(value);
+    //         return sleep(true);
+    //     }).then(value => {
+    //     console.log(value);
+    //     })
+    //     .catch(e => console.log(e))
+
+    //async/await
+    // async function myDay(){
+    //     try{
+    //         console.log(await wakeUp('Sunday'));
+    //         console.log(await breakfast(true));
+    //         console.log(await goToWork(true));
+    //         console.log(await dinner(true));
+    //         console.log(await work());
+    //         console.log(await goHome(true));
+    //         console.log(await study(true));
+    //         console.log(await supper(true));
+    //         console.log(await sleep(true));
+    //     }catch (e) {
+    //         console.error(e)
+    //     }
+    //
+    // }
+    //
+    // myDay()
+
+</script>
+</body>
+</html>
