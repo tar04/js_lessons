@@ -1,197 +1,197 @@
-//  TODO HW
+
 // Зробити свій розпорядок дня. // // У вас має бути більше 10 асинхронних дій з рандомними затримками.
 // Вам необхідно синхронізувати всі свої дії за допомогою промісів та async await (Код має бути написаний окремо)
 // Затримка має бути НЕ в порядку зростання, а будь яка. При тому ваші дії мають бути синхронізовані.
 // // Наприклад. // Прокинутись - 0.3с // Поснідати - 1с // Піти в душ - 0.5с // Дочекатись автобус - 3с // Пообідати - 1с // // І так далі
 
 //Callbacks
-function wakeUp(wokeUp, cb) {
-    setTimeout(() => {
-        if (wokeUp) {
-            cb(null, 'Прокинутись');
-        } else {
-            cb('Давай вставай уже');
-        }
-    }, 3000);
-}
-
-function breakfast(cb) {
-    setTimeout(() => {
-        cb(null, 'Сніданок');
-    }, 1000);
-}
-
-function wash(cb) {
-    setTimeout(() => {
-        cb(null, 'Прийняти душ');
-    }, 2000);
-}
-
-function workPlace(cb) {
-    setTimeout(() => {
-        cb(null,'Поїхати в офіс');
-    }, 500);
-}
-
-function work(cb) {
-    setTimeout(() => {
-        cb(null, 'Працюємо!!');
-    }, 3000);
-}
-
-function dinner(wantToEat, cb) {
-    setTimeout(() => {
-        if (wantToEat) {
-            cb(null, 'Обід');
-        } else {
-            cb('Треба поїсти')
-        }
-    }, 300);
-}
-
-function goHome(cb) {
-    setTimeout(() => {
-        cb(null, 'Поїхати додому');
-    }, 500)
-}
-
-function training(cb) {
-    setTimeout(() => {
-        cb(null, 'Тренування');
-    }, 1000);
-}
-
-function supper(cb) {
-    setTimeout(() => {
-        cb(null, 'Вечеря');
-    }, 300);
-}
-
-function freeTime(cb) {
-    setTimeout(() => {
-        cb(null, 'Прочитати книгу(мінімум 40 сторінок)');
-    }, 1000);
-}
-
-function brushTeeth(cb) {
-    setTimeout(() => {
-        cb(null, 'Почистити зуби');
-    }, 200);
-}
-
-function sleep(cb) {
-    setTimeout(() => {
-        cb(null, 'Лягаємо спати');
-    }, 100);
-}
-
-wakeUp(true, (err, morning) => {
-    if (err) {
-        console.error('ERROR:', err);
-        return;
-    }
-
-    console.log(morning);
-
-    breakfast((err, bf) => {
-        if (err) {
-            console.error('ERROR:', err);
-            return;
-        }
-
-        console.log(bf);
-
-        wash((err, washing) => {
-            if (err) {
-                console.error('ERROR:', err);
-                return;
-            }
-
-            console.log(washing);
-
-            workPlace((err, road) => {
-                if (err) {
-                    console.error('ERROR:', err);
-                    return;
-                }
-
-                console.log(road);
-
-                work((err,working)=>{
-                    if (err) {
-                        console.error('ERROR:', err);
-                        return;
-                    }
-
-                    console.log(working);
-
-                    dinner(false,(err,eating)=>{
-                        if (err) {
-                            console.error('ERROR:', err);
-                            return;
-                        }
-
-                        console.log(eating);
-
-                        goHome((err,goingHome)=>{
-                            if (err) {
-                                console.error('ERROR:', err);
-                                return;
-                            }
-
-                            console.log(goingHome);
-
-                            training((err,train)=>{
-                                if (err) {
-                                    console.error('ERROR:', err);
-                                    return;
-                                }
-
-                                console.log(train);
-
-                                supper((err,eating)=>{
-                                    if (err) {
-                                        console.error('ERROR:', err);
-                                        return;
-                                    }
-
-                                    console.log(eating);
-
-                                    freeTime((err,ft)=>{
-                                        if (err) {
-                                            console.error('ERROR:', err);
-                                            return;
-                                        }
-
-                                        console.log(ft);
-
-                                        brushTeeth((err,brushing)=>{
-                                            if (err) {
-                                                console.error('ERROR:', err);
-                                                return;
-                                            }
-
-                                            console.log(brushing);
-
-                                            sleep((err,sleeping)=>{
-                                                if (err) {
-                                                    console.error('ERROR:', err);
-                                                    return;
-                                                }
-
-                                                console.log(sleeping);
-                                            })
-                                        })
-                                    })
-                                })
-                            })
-                        })
-                    })
-                })
-            })
-        })
-    })
-});
+// function wakeUp(wokeUp, cb) {
+//     setTimeout(() => {
+//         if (wokeUp) {
+//             cb(null, 'Прокинутись');
+//         } else {
+//             cb('Давай вставай уже');
+//         }
+//     }, 3000);
+// }
+//
+// function breakfast(cb) {
+//     setTimeout(() => {
+//         cb(null, 'Сніданок');
+//     }, 1000);
+// }
+//
+// function wash(cb) {
+//     setTimeout(() => {
+//         cb(null, 'Прийняти душ');
+//     }, 2000);
+// }
+//
+// function workPlace(cb) {
+//     setTimeout(() => {
+//         cb(null,'Поїхати в офіс');
+//     }, 500);
+// }
+//
+// function work(cb) {
+//     setTimeout(() => {
+//         cb(null, 'Працюємо!!');
+//     }, 3000);
+// }
+//
+// function dinner(wantToEat, cb) {
+//     setTimeout(() => {
+//         if (wantToEat) {
+//             cb(null, 'Обід');
+//         } else {
+//             cb('Треба поїсти')
+//         }
+//     }, 300);
+// }
+//
+// function goHome(cb) {
+//     setTimeout(() => {
+//         cb(null, 'Поїхати додому');
+//     }, 500)
+// }
+//
+// function training(cb) {
+//     setTimeout(() => {
+//         cb(null, 'Тренування');
+//     }, 1000);
+// }
+//
+// function supper(cb) {
+//     setTimeout(() => {
+//         cb(null, 'Вечеря');
+//     }, 300);
+// }
+//
+// function freeTime(cb) {
+//     setTimeout(() => {
+//         cb(null, 'Прочитати книгу(мінімум 40 сторінок)');
+//     }, 1000);
+// }
+//
+// function brushTeeth(cb) {
+//     setTimeout(() => {
+//         cb(null, 'Почистити зуби');
+//     }, 200);
+// }
+//
+// function sleep(cb) {
+//     setTimeout(() => {
+//         cb(null, 'Лягаємо спати');
+//     }, 100);
+// }
+//
+// wakeUp(true, (err, morning) => {
+//     if (err) {
+//         console.error('ERROR:', err);
+//         return;
+//     }
+//
+//     console.log(morning);
+//
+//     breakfast((err, bf) => {
+//         if (err) {
+//             console.error('ERROR:', err);
+//             return;
+//         }
+//
+//         console.log(bf);
+//
+//         wash((err, washing) => {
+//             if (err) {
+//                 console.error('ERROR:', err);
+//                 return;
+//             }
+//
+//             console.log(washing);
+//
+//             workPlace((err, road) => {
+//                 if (err) {
+//                     console.error('ERROR:', err);
+//                     return;
+//                 }
+//
+//                 console.log(road);
+//
+//                 work((err,working)=>{
+//                     if (err) {
+//                         console.error('ERROR:', err);
+//                         return;
+//                     }
+//
+//                     console.log(working);
+//
+//                     dinner(false,(err,eating)=>{
+//                         if (err) {
+//                             console.error('ERROR:', err);
+//                             return;
+//                         }
+//
+//                         console.log(eating);
+//
+//                         goHome((err,goingHome)=>{
+//                             if (err) {
+//                                 console.error('ERROR:', err);
+//                                 return;
+//                             }
+//
+//                             console.log(goingHome);
+//
+//                             training((err,train)=>{
+//                                 if (err) {
+//                                     console.error('ERROR:', err);
+//                                     return;
+//                                 }
+//
+//                                 console.log(train);
+//
+//                                 supper((err,eating)=>{
+//                                     if (err) {
+//                                         console.error('ERROR:', err);
+//                                         return;
+//                                     }
+//
+//                                     console.log(eating);
+//
+//                                     freeTime((err,ft)=>{
+//                                         if (err) {
+//                                             console.error('ERROR:', err);
+//                                             return;
+//                                         }
+//
+//                                         console.log(ft);
+//
+//                                         brushTeeth((err,brushing)=>{
+//                                             if (err) {
+//                                                 console.error('ERROR:', err);
+//                                                 return;
+//                                             }
+//
+//                                             console.log(brushing);
+//
+//                                             sleep((err,sleeping)=>{
+//                                                 if (err) {
+//                                                     console.error('ERROR:', err);
+//                                                     return;
+//                                                 }
+//
+//                                                 console.log(sleeping);
+//                                             })
+//                                         })
+//                                     })
+//                                 })
+//                             })
+//                         })
+//                     })
+//                 })
+//             })
+//         })
+//     })
+// });
 
 // Promises
 //function wakeUp(wokeUp) {
@@ -362,7 +362,6 @@ wakeUp(true, (err, morning) => {
 //    .catch(e => {
 //        console.error(e);
 //    })
-
 
 //async/await
 //function wakeUp(wokeUp) {
